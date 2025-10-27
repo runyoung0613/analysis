@@ -1,4 +1,4 @@
 Keras
 gensim
 jieba
-sklearn
+scikit-learn

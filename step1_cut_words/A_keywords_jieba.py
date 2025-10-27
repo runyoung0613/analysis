@@ -1,4 +1,8 @@
 from jieba import analyse
+import os
+
+# 获取脚本所在目录的绝对路径
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
 def extract_key(file1,file2):
@@ -25,10 +29,10 @@ def extract_key(file1,file2):
 
 if __name__ == '__main__':
     
-    file1 = "temp data/contents_full.dat"
-    file2 = "temp data/contents_keywords.dat"
+    # 构建输入输出文件的绝对路径
+    file1 = os.path.join(script_dir, "temp data", "contents_full.dat")
+    file2 = os.path.join(script_dir, "temp data", "contents_keywords.dat")
     print("关键词提取开始...")     
     extract_key(file1,file2)
         
     print("Done!")
-
