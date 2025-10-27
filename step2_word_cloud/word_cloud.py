@@ -5,13 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties  
 from wordcloud import WordCloud,ImageColorGenerator
+import os
 #import matplotlib.mlab as mlab    
 
 font = FontProperties(fname='Songti.ttc')  
 bar_width = 0.5
 lyric= ''
 
-f=open('../step1_cut_words/temp data/contents_keywords.dat','r')
+f=open('e:/analysis/step1_cut_words/temp data/contents_keywords.dat','r', encoding='utf-8')
 
 for i in f:
     lyric+=f.read()
@@ -25,17 +26,21 @@ for i in result:
     keywords[i[0]]=i[1]
 print(keywords)
 
-image= Image.open('./background.png')
+image= Image.open('e:/analysis/step2_word_cloud/background1.png')
 graph = np.array(image)
 print(graph)
-wc = WordCloud(font_path='Songti.ttc',background_color='White',max_words=50,mask=graph)
+wc = WordCloud(font_path='C:/Windows/Fonts/simhei.ttf',background_color='White',max_words=50,mask=graph)
 wc.generate_from_frequencies(keywords)
 image_color = ImageColorGenerator(graph)#设置背景图像
 plt.imshow(wc)  #画图
 plt.imshow(wc.recolor(color_func=image_color))  #根据背景图片着色
 plt.axis("off") #不显示坐标轴
 plt.show()
-wc.to_file('output.png')
+
+# 保存到固定路径，每次运行覆盖原文件
+output_path = 'e:/analysis/step2_word_cloud/output.png'
+print(f'保存词云图像到: {output_path}')
+wc.to_file(output_path)
 
 # X=[]  
 # Y=[] 

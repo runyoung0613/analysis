@@ -1,7 +1,6 @@
 # news-analyst
 ## 项目关键词
 Word2Vec
-
 ## 文件说明
 ### step1_cut_words
 **dict：停用词表**
@@ -68,6 +67,8 @@ clustering_result.txt：聚类分析结果文件，包含了每个评论所属�
 - step4_AP.py：AP聚类分析文件，包括数据预处理、聚类模型训练、聚类结果可视化等
 - step5_select_sentence.py：选择情感分析结果为积极的评论文件，用于后续的情感分析任务
 tfidf-ap.py：tf-idf聚类分析文件，包括数据预处理、聚类模型训练、聚类结果可视化等
+
+## 使用步骤
 
 
 ## 词云展示涉及的算法：

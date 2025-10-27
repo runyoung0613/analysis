@@ -10,7 +10,7 @@ jieba.load_userdict(os.path.join(script_dir, "dict", "dict_baidu_utf8.txt"))
 jieba.load_userdict(os.path.join(script_dir, "dict", "dict_pangu.txt"))
 jieba.load_userdict(os.path.join(script_dir, "dict", "dict_sougou_utf8.txt"))
 jieba.load_userdict(os.path.join(script_dir, "dict", "dict_tencent_utf8.txt"))
-#jieba.load_userdict(os.path.join(script_dir, "dict", "my_dict.txt"))
+jieba.load_userdict(os.path.join(script_dir, "dict", "my_dict.txt"))
 
 def get_data(file,file2):
     # 使用绝对路径加载停用词表

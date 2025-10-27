@@ -1,9 +1,6 @@
 import pandas as pd 
 import json
 
-
-
-
 #将每条评论放入list 中
 def get_data(contents_all):
 	contents = []
